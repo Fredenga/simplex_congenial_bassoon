@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :simplex, Simplex.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "secret",
   hostname: "localhost",
   database: "simplex_dev",
   stacktrace: true,
