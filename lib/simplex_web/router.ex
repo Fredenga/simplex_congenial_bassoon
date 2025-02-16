@@ -66,9 +66,14 @@ defmodule SimplexWeb.Router do
 
     live_session :require_authenticated_user,
       on_mount: [{SimplexWeb.UserAuth, :ensure_authenticated}] do
-      live "/", PostLive
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
+
+      live "/posts", PostLive.Index, :index
+      live "/posts/new", PostLive.Index, :new
+      live "/posts/:id/edit", PostLive.Index, :edit
+      live "/posts/:id", PostLive.Show, :show
+
     end
   end
 
