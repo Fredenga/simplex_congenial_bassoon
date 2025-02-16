@@ -5,6 +5,7 @@ defmodule SimplexWeb.PostLive.Index do
   alias Simplex.Blog.Post
 
   @impl true
+  @spec mount(any(), any(), Phoenix.LiveView.Socket.t()) :: {:ok, Phoenix.LiveView.Socket.t()}
   def mount(_params, _session, socket) do
     {:ok, stream(socket, :posts, Blog.list_posts())}
   end
