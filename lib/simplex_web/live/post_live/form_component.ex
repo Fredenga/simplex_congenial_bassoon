@@ -9,7 +9,7 @@ defmodule SimplexWeb.PostLive.FormComponent do
     <div>
       <.header>
         {@title}
-        <:subtitle>Use this form to manage post records in your database.</:subtitle>
+        <:subtitle>To manage post records in your database.</:subtitle>
       </.header>
 
       <.simple_form
