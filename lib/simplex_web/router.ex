@@ -20,7 +20,7 @@ defmodule SimplexWeb.Router do
   scope "/", SimplexWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
   end
 
   # Other scopes may use custom stacks.
@@ -85,6 +85,7 @@ defmodule SimplexWeb.Router do
 
     live_session :current_user,
       on_mount: [{SimplexWeb.UserAuth, :mount_current_user}] do
+      live "/", LandingLive.Index
       live "/users/confirm/:token", UserConfirmationLive, :edit
       live "/users/confirm", UserConfirmationInstructionsLive, :new
     end
